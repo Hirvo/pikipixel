@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoBaana - Find the Twistiest Asphalt Roads in Finland</title>
+    <meta name="description" content="MotoBaana is the ultimate motorcycle map app for Finland. Discover epic twisty roads, monitor road conditions, and plan your perfect ride.">
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #121417; /* Midnight Charcoal */
+            --primary-accent: #00B0FF; /* Azure Blue */
+            --secondary-accent: #2962FF; /* Royal Blue */
+            --surface-color: rgba(255, 255, 255, 0.05);
+            --text-color: #E0E0E0;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            color: #FFFFFF;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 0%, rgba(18, 20, 23, 1) 100%), 
+                        url('banner.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            z-index: 10;
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+            background: rgba(18, 20, 23, 0.4);
+            padding: 3rem;
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-text {
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, #FFFFFF, var(--primary-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0, 176, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 176, 255, 0.5);
+            background: #40C4FF;
+        }
+
+        section {
+            padding: 100px 10%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--surface-color);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-accent);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            padding: 50px 10%;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-accent);
+        }
+
+        @media (max-width: 768px) {
+            .logo-text { font-size: 3rem; }
+            section { padding: 60px 20px; }
+            footer { flex-direction: column; text-align: center; }
+            .footer-links a { margin: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1 class="logo-text">MotoBaana</h1>
+            <p class="tagline">The Twistiest Roadmap</p>
+            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; color: #BBB;">
+                Crafted for Finnish riders. Discover scenic, high-curviness asphalt roads, monitor live pavement quality, and build your epic tour.
+            </p>
+            <a href="https://play.google.com/store" class="cta-button">Coming Soon to Google Play</a>
+        </div>
+    </header>
+
+    <section id="features">
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🌀</div>
+                <h3>Twistiness AI</h3>
+                <p>Proprietary algorithms detect the degrees of turn per kilometer, highlighting "Epic" stretches in vibrant Azure.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛣️</div>
+                <h3>Asphalt Focus</h3>
+                <p>Filtered to show only paved roads. No surprise gravel unless you want it. Live condition layers included.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Track Builder</h3>
+                <p>Plan point-to-point routes with smart snapping and export them as GPX for your BMW or Garmin nav system.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; background: rgba(0, 176, 255, 0.05); border-radius: 40px; margin-top: 40px; margin-bottom: 80px;">
+        <h2 style="margin-bottom: 20px; font-size: 2.5rem;">Ride Smarter.</h2>
+        <p style="max-width: 700px; margin: auto; font-size: 1.2rem; opacity: 0.8;">
+            MotoBaana combines open-source geographic data with rider-specific filters to help you avoid boring motorways and find the roads you bought your bike for.
+        </p>
+    </section>
+
+    <footer>
+        <div>
+            <p>&copy; 2026 Heikki Turja. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Support</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="https://github.com/pikipixel/motomap">GitHub Repo</a>
+        </div>
+    </footer>
+
+</body>
+</html>
