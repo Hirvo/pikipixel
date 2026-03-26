@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MotoBaana</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #121417;
+            --primary-accent: #00B0FF;
+            --secondary-accent: #2962FF;
+            --surface-color: rgba(255, 255, 255, 0.05);
+            --text-color: #E0E0E0;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            color: #FFFFFF;
+        }
+
+        .top-nav {
+            padding: 2rem 10%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: rgba(18, 20, 23, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .top-nav a:hover {
+            color: var(--primary-accent);
+        }
+
+        main {
+            flex: 1;
+            padding: 80px 10%;
+            max-width: 900px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .contact-card {
+            background: var(--surface-color);
+            padding: 3rem;
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-item label {
+            display: block;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        footer {
+            padding: 50px 10%;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-accent);
+        }
+
+        @media (max-width: 768px) {
+            main { padding: 40px 20px; }
+            footer { flex-direction: column; text-align: center; }
+            .footer-links a { margin: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="index.html" style="margin-right: auto; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.5rem; color: #fff;">MotoBaana</a>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+    </nav>
+
+    <main>
+        <div class="contact-card">
+            <h1 style="margin-bottom: 1rem; font-size: 2.5rem;">Contact Us</h1>
+            <p style="margin-bottom: 2rem; opacity: 0.8;">Have questions or feedback about MotoBaana? Reach out to us below.</p>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <label>Legal Entity</label>
+                    <p>Turja Heikki Martti Matias</p>
+                </div>
+                <div class="info-item">
+                    <label>Email</label>
+                    <p>pikipixel@proton.me</p>
+                </div>
+                <div class="info-item">
+                    <label>Address</label>
+                    <p>Timpurinkatu 9, 33720 Tampere, Finland</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy; 2026 Heikki Turja. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="contact.html">Contact</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
